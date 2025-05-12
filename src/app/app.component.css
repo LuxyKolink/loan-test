@@ -1,0 +1,19 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content {
+  flex: 1;
+  padding: 1rem;
+  background-color: var(--gray-100);
+}
+
+.app-footer {
+  background-color: var(--deep-purple);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+}

@@ -1,0 +1,53 @@
+.app-header {
+  background-color: var(--deep-purple);
+  color: var(--white);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu ul li {
+  margin-left: 1.5rem;
+}
+
+.nav-menu ul li a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-menu ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--light-purple);
+  transition: width 0.3s ease;
+}
+
+.nav-menu ul li a:hover::after, 
+.nav-menu ul li a.active::after {
+  width: 100%;
+}
+
+.nav-menu ul li a.active {
+  color: var(--light-purple);
+}

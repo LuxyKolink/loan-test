@@ -1,0 +1,10 @@
+<div class="user-list-item">
+  <div class="col-id">{{ user.id }}</div>
+  <div class="col-name">{{ user.name }}</div>
+  <div class="col-email">{{ user.email }}</div>
+  <div class="col-status">
+    <span class="status-badge" [class.active]="user.isActive" [class.inactive]="!user.isActive">
+      {{ user.isActive ? 'Active' : 'Inactive' }}
+    </span>
+  </div>
+</div>
