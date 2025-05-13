@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { User } from '../../interfaces/user.interface';
 import { UserService } from '../../services/user.service';
 import { UserListComponent } from "../../components/user-list/user-list.component";
+import { AddButtonComponent } from "../../components/add-button/add-button.component";
 
 @Component({
   selector: 'app-users',
-  imports: [UserListComponent],
+  imports: [UserListComponent, AddButtonComponent],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css',
 })

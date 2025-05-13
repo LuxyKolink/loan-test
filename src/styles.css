@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'); */
 
 :root {
   --deep-purple: #5E2CA5;
@@ -17,7 +17,7 @@
   padding: 0;
 }
 
-body {
+/* body {
   font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--gray-100);
   color: var(--gray-800);
@@ -60,4 +60,4 @@ button:disabled {
 .btn-outline:hover {
   background-color: rgba(164, 99, 242, 0.1);
   color: var(--deep-purple);
-}
+} */

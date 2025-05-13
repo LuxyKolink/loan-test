@@ -1,1 +1,48 @@
-<p>add-user works!</p>
+<h3>Add User</h3>
+
+<div class="container">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <label for="name">Name</label>
+    <input type="text" id="name" formControlName="name" placeholder="Enter user's name...">
+    @if (userForm.get('name')?.invalid && userForm.get('name')?.touched) {
+      <div class="error-message">
+        @if (userForm.get('name')?.errors?.['required']) {
+          <span>Name is required</span>
+        } @else if (userForm.get('name')?.errors?.['minlength']) {
+          <span>Name must be at least 3 characters</span>
+        }
+      </div>
+    }
+
+    <label for="email">Email</label>
+    <input type="email" id="email" formControlName="email" placeholder="Enter user's email...">
+    @if (userForm.get('email')?.invalid && userForm.get('email')?.touched) {
+      <div class="error-message">
+        @if (userForm.get('email')?.errors?.['required']) {
+          <span>Email is required</span>
+        } @else if (userForm.get('email')?.errors?.['email']) {
+          <span>Please enter a valid email address</span>
+        }
+      </div>
+    }
+
+    <label for="age">Age</label>
+    <input type="number" id="age" formControlName="age" placeholder="Enter user's age...">
+    @if (userForm.get('age')?.invalid && userForm.get('age')?.touched) {
+      <div class="error-message">
+        @if (userForm.get('age')?.errors?.['min']) {
+          <span>Age cannot be negative</span>
+        } @else if (userForm.get('age')?.errors?.['max']) {
+          <span>Age cannot exceed 120</span>
+        }
+      </div>
+    }
+
+    <div class="checkbox-container">
+      <input type="checkbox" id="isActive" formControlName="isActive">
+      <label for="isActive">Active User</label>
+    </div>
+
+    <input type="submit" value="Add User" [disabled]="userForm.invalid">
+  </form>
+</div>

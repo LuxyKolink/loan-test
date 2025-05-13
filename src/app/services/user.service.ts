@@ -38,4 +38,9 @@ export class UserService {
   getUserById(id: number): User | undefined {
     return this.users.find(user => user.id === id);
   }
+
+  addUser(user: User): void {
+    const newUser = { ...user, id: this.users.length + 1 };
+    this.users.push(newUser);
+  }
 }

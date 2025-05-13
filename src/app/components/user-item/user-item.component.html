@@ -1,10 +1,9 @@
-<div class="user-list-item">
-  <div class="col-id">{{ user.id }}</div>
-  <div class="col-name">{{ user.name }}</div>
-  <div class="col-email">{{ user.email }}</div>
-  <div class="col-status">
-    <span class="status-badge" [class.active]="user.isActive" [class.inactive]="!user.isActive">
-      {{ user.isActive ? 'Active' : 'Inactive' }}
-    </span>
+<div class="user-card">
+  <div class="user-id">#{{ user.id }}</div>
+  <h3 class="user-name">{{ user.name }}</h3>
+  <p class="user-email">{{ user.email }}</p>
+  <p class="user-age">Age: {{ user.age }}</p>
+  <div class="status-badge" [class.active]="user.isActive" [class.inactive]="!user.isActive">
+    {{ user.isActive ? 'Active' : 'Inactive' }}
   </div>
 </div>

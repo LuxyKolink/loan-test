@@ -1,33 +1,33 @@
-.user-list-item {
-  display: flex;
-  border-bottom: 1px solid var(--gray-300);
+.user-card {
+  background-color: var(--deep-purple);
+  border-radius: 8px;
   padding: 1rem;
-  /* transition: background-color 0.2s ease; */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
-.user-list-item:last-child {
-  border-bottom: none;
+.user-id {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--light-purple);
+  font-size: 0.875rem;
 }
 
-.user-list-item:hover {
-  background-color: var(--light-purple);
+.user-name {
+  margin: 0 0 0.5rem 0;
+  color: var(--white);
+  font-size: 1.25rem;
 }
 
-.col-id {
-  flex: 0 0 10%;
+.user-email {
+  margin: 0 0 0.5rem 0;
+  color: var(--light-purple);
 }
 
-.col-name {
-  flex: 0 0 25%;
-}
-
-.col-email {
-  flex: 0 0 40%;
-}
-
-.col-status {
-  flex: 0 0 25%;
-  text-align: center;
+.user-age {
+  margin: 0 0 1rem 0;
+  color: var(--light-purple);
 }
 
 .status-badge {
@@ -35,17 +35,16 @@
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.875rem;
-  font-weight: 500;
 }
 
 .status-badge.active {
-  background-color: rgba(164, 99, 242, 0.2);
-  color: var(--deep-purple);
-  border: 1px solid var(--medium-purple);
+  background-color: rgba(212, 194, 252, 0.3);
+  color: var(--white);
+  border: 1px solid var(--light-purple);
 }
 
 .status-badge.inactive {
-  background-color: var(--gray-200);
-  color: var(--gray-800);
-  border: 1px solid var(--gray-300);
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--gray-200);
+  border: 1px solid var(--gray-400);
 }
