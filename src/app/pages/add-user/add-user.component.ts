@@ -22,13 +22,13 @@ export class AddUserComponent {
   ngOnInit(): void {
     this.initForm();
   }
-  
+
   initForm(): void {
     this.userForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
-      email: ['', [Validators.required, Validators.email]],
-      age: [null, [Validators.min(0), Validators.max(120)]],
-      isActive: [true]
+      name: this.fb.control<string | null>('', [Validators.required, Validators.minLength(3)]),
+      email: this.fb.control<string | null>('', [Validators.required, Validators.email]),
+      age: this.fb.control<number | null>(null, [Validators.min(0), Validators.max(120)]),
+      isActive: this.fb.control<boolean>(true)
     });
   }
   
