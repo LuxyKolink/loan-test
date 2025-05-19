@@ -1,29 +1,11 @@
-<!-- <header class="app-header">
-  <div class="logo">Loan Management</div>
-  <nav class="nav-menu">
-    <ul>
-      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-      <li><a routerLink="/users" routerLinkActive="active">Users</a></li>
-      <li><a routerLink="/loans" routerLinkActive="active">Loans</a></li>
-      <li><a routerLink="/reports" routerLinkActive="active">Reports</a></li>
-      <li><a routerLink="/settings" routerLinkActive="active">Settings</a></li>
-    </ul>
-  </nav>
-</header> -->
-
 <header class="app-header">
-  <div class="logo">Loan Management</div>
+  <!-- <div class="logo">
+    <a routerLink="/">{{ title }}</a>
+  </div> -->
+  <div class="logo">{{ title }}</div>
   <nav class="topnav">
-    <a class="active" href="#home">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
+    @for (link of links; track $index) {
+      <a [routerLink]="link.path" routerLinkActive="active">{{ link.name }}</a>
+    }
   </nav>
 </header>
-
-<!-- <div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-</div> -->
