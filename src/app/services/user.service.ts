@@ -66,12 +66,26 @@ export class UserService {
     return this.users;
   }
 
-  getUserById(id: number): User | undefined {
-    return this.users.find(user => user.id === id);
+  getUserById(id: number): User | null {
+    const user = this.users.find((user) => user.id === id);
+    if (!user) {
+      console.error(`User with id ${id} not found.`);
+      return null;
+    }
+    return {...user};
   }
 
   addUser(user: User): void {
     const newUser = { ...user, id: this.users.length + 1 };
     this.users.push(newUser);
+  }
+
+  updateUser(user: User): void {
+    const index = this.users.findIndex((u) => u.id === user.id);
+    if (index !== -1) {
+      this.users[index] = user;
+    } else {
+      console.error(`User with id ${user.id} not found for update.`);
+    }
   }
 }
