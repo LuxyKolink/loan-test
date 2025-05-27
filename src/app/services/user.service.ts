@@ -12,6 +12,26 @@ export class UserService {
       age: 22,
       email: 'santiago.molano@example.com',
       isActive: true,
+      loan: [
+        {
+          id: 1,
+          amount: 10000,
+          interestRate: 0.5,
+          term: 12,
+          startDate: new Date('2023-01-01'),
+          endDate: new Date('2024-01-01'),
+          status: 'approved'
+        },
+        {
+          id: 2,
+          amount: 5000,
+          interestRate: 0.4,
+          term: 6,
+          startDate: new Date('2023-06-01'),
+          endDate: new Date('2023-12-01'),
+          status: 'pending'
+        }
+      ]
     },
     {
       id: 2,
@@ -26,6 +46,17 @@ export class UserService {
       age: 23,
       email: 'diego.cardenas@example.com',
       isActive: false,
+      loan: [
+        {
+          id: 3,
+          amount: 15000,
+          interestRate: 0.35,
+          term: 24,
+          startDate: new Date('2022-05-01'),
+          endDate: new Date('2024-05-01'),
+          status: 'paid'
+        }
+      ]
     }
   ];
 

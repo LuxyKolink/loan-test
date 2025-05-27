@@ -6,4 +6,17 @@
   <div class="status-badge" [class.active]="user.isActive" [class.inactive]="!user.isActive">
     {{ user.isActive ? 'Active' : 'Inactive' }}
   </div>
+  @if (user.loan && user.loan.length > 0) {
+    <div class="loan-info">
+      <h4>Loan Details:</h4>
+      <ul>
+        @for (loan of user.loan; track loan.id) {
+            <li><strong>Prestamo:</strong> {{ loan.amount | currency }}</li>
+            <li><strong>Interes:</strong> {{ loan.interestRate | percent }}</li>
+            <li><strong>Estado:</strong> {{ loan.status }}</li>
+            <li><strong>Fecha de Prestamo:</strong> {{ loan.startDate | date: "MMM-dd-YYYY" }}</li>
+        }
+      </ul>
+    </div>
+  }
 </div>
